@@ -36,20 +36,21 @@ namespace Parprogrammering1
             Console.WriteLine("press the number you want");
             Console.WriteLine("1. Movie");
             Console.WriteLine("2. Book");
+            Console.WriteLine("any other to exit");
             var choice = Console.ReadLine();
-            if (choice == "1")
+            switch (choice)
             {
-                list.Add(MakeFilm());
-                Console.WriteLine();
-            }
-            else if (choice == "2")
-            {
-                list.Add(MakeBook());
-                Console.WriteLine();
-            }
-            else
-            {
-                Environment.Exit(0);
+                case "1":
+                    list.Add(MakeFilm());
+                    Console.WriteLine();
+                    break;
+                case "2":
+                    list.Add(MakeBook());
+                    Console.WriteLine();
+                    break;
+                default:
+                    Environment.Exit(0);
+                    break;
             }
 
             foreach (var item in list)
