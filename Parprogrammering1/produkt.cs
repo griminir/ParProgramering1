@@ -29,6 +29,13 @@ namespace Parprogrammering1
             Skaper = skaper;
             MainCast = maincast;
         }
+        public Produkt(string title, int år, string besrivelse, string skaper)
+        {
+            Tittle = title;
+            År = år;
+            Beskivelse = besrivelse;
+            Skaper = skaper;
+        }
 
         public void Run(List<Produkt> list)
         {
@@ -59,7 +66,11 @@ namespace Parprogrammering1
                 Console.WriteLine($"year: {item.År}");
                 Console.WriteLine($"plot: {item.Beskivelse}");
                 Console.WriteLine($"Creator: {item.Skaper}");
-                Console.WriteLine($"Main Character: {item.MainCast}");
+                if (item.MainCast != null)
+                {
+                    Console.WriteLine($"Main Character: {item.MainCast}");
+                }
+
                 Console.WriteLine();
             }
 
@@ -73,10 +84,10 @@ namespace Parprogrammering1
                 var plot = Console.ReadLine();
                 Console.WriteLine("who wrote this book?");
                 var author = Console.ReadLine();
-                Console.WriteLine("what is the name of the main character?");
-                var MC = Console.ReadLine();
+                //Console.WriteLine("what is the name of the main character?");
+                //var MC = Console.ReadLine();
 
-                return new Produkt(title, published, plot, author, MC);
+                return new Produkt(title, published, plot, author);
             }
 
             Produkt MakeFilm()
@@ -89,7 +100,7 @@ namespace Parprogrammering1
                 var plot = Console.ReadLine();
                 Console.WriteLine("who is the director?");
                 var author = Console.ReadLine();
-                Console.WriteLine("what is the name of the main character?");
+                Console.WriteLine("what is the name of the main actor?");
                 var MC = Console.ReadLine();
 
                 return new Produkt(title, published, plot, author, MC);
